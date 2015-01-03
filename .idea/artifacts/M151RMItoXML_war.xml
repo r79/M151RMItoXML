@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="M151RMItoXML:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="M151RMItoXML.war">
+      <element id="artifact" artifact-name="M151RMItoXML:war exploded" />
+    </root>
+  </artifact>
+</component>
