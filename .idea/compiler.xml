@@ -25,5 +25,8 @@
         <module name="M151RMItoXML" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="M151RMItoXML" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
