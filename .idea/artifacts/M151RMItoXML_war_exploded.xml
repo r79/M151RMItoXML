@@ -20,7 +20,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="C:\Users\R79\intelliJProjects\M223\M151RMItoXML\target/MANIFEST.MF" />
+        <element id="file-copy" path="C:\Users\rbuechle\IntelliJProjects\M151RMItoXML\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="M151RMItoXML/web/Web" />
     </root>
