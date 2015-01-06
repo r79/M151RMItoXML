@@ -23,15 +23,7 @@ import java.util.Date;
 @Controller
 @RequestMapping
 @ResponseStatus(HttpStatus.OK)
-public class HelloController {
-
-
-
-	@RequestMapping(value="/",method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
-		model.addAttribute("message", "Hello world!");
-		return "hello";
-	}
+public class MainController {
 
 	@RequestMapping(value="/performances/{start}/{end}", produces={"application/xml"})
 	@ResponseBody
@@ -44,14 +36,10 @@ public class HelloController {
 
 		System.out.println("incoming Request | Performances | start= " + sdf.format(start) + " | end= " + sdf.format(end) + " |");
 
-//		FilmClubInterface filmClubInterface = (FilmClubInterface) Naming.lookup("//localhost/SQLService");
-//
-//		ArrayList<PerformanceDTO> performances = filmClubInterface.getPerformances(startDate, endDate);
+		FilmClubInterface filmClubInterface = (FilmClubInterface) Naming.lookup("//localhost/SQLService");
 
-		ArrayList<PerformanceDTO> performances = new ArrayList<PerformanceDTO>();
+		ArrayList<PerformanceDTO> performances = filmClubInterface.getPerformances(startDate, endDate);
 
-		performances.add(new PerformanceDTO(1, new Date(123123123).getTime(), "room", "title", "titlelink"));
-		performances.add(new PerformanceDTO(2, new Date(321321321).getTime(), "room2", "title", "titlelink"));
 
 		System.out.println("responded " + performances.size() + " Performances");
 
@@ -65,12 +53,9 @@ public class HelloController {
 
 		System.out.println("incoming Request | Visitors | performanceId= " + performanceId + " |");
 
-//		FilmClubInterface filmClubInterface = (FilmClubInterface) Naming.lookup("//localhost/SQLService");
+		FilmClubInterface filmClubInterface = (FilmClubInterface) Naming.lookup("//localhost/SQLService");
 
-//		ArrayList<VisitorDTO> visitors = filmClubInterface.getVisitors(performanceId);
-
-		ArrayList<VisitorDTO> visitors = new ArrayList<VisitorDTO>();
-		visitors.add(new VisitorDTO(1, "hans", "Peter", "123 456 13 37"));
+		ArrayList<VisitorDTO> visitors = filmClubInterface.getVisitors(performanceId);
 
 		System.out.println("responded " + visitors.size() + " Visitors");
 

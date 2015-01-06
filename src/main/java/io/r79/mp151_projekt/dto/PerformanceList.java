@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by rbuechle on 06.01.2015.
  */
 
-@XmlRootElement(name="performancelist")
+@XmlRootElement(name="performances")
 public class PerformanceList {
     private ArrayList<PerformanceDTO> performances;
 
